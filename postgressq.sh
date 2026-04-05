@@ -10,3 +10,9 @@ sed -i "s/^local[[:space:]]\+all[[:space:]]\+all[[:space:]]\+peer/local   all   
 
 grep -q "^host[[:space:]]\+all[[:space:]]\+all[[:space:]]\+0.0.0.0/0[[:space:]]\+scram-sha-256" "$FILE" || \
 echo "host    all    all    0.0.0.0/0    scram-sha-256" >> "$FILE"
+
+systemctl restart postgresql-16
+
+postgres /usr/pgsql-16/bin/psql -f schema.sql
+
+
