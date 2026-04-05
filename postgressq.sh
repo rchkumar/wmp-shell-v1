@@ -13,6 +13,6 @@ echo "host    all    all    0.0.0.0/0    scram-sha-256" >> "$FILE"
 
 systemctl restart postgresql-16
 
-postgres /usr/pgsql-16/bin/psql -f schema.sql
+sudo -u postgres /usr/pgsql-16/bin/psql -f schema.sql
 
 
